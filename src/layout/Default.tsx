@@ -3,7 +3,7 @@ import { Header } from "../components/Header";
 
 export function Default() {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <Header />
       <div>
         <Outlet />

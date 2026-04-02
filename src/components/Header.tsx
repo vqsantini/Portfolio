@@ -6,13 +6,13 @@ export function Header() {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <div className="fixed w-screen bg-white/95 dark:bg-slate-900/95 border-b-[0.5px] border-slate-200 dark:border-slate-800 ">
+    <div className="fixed w-screen bg-white/95 dark:bg-slate-900 border-b-[0.5px] border-slate-200 dark:border-slate-800">
       <nav className="max-w-[85%] flex justify-between items-center mx-auto px-6 py-4">
-        <Link to='#' className="text-2xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent">
+        <Link to='#' className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent md:text-2xl">
           Portfolio
         </Link>
-        <div className="md:flex items-center gap-8 text-lg text-slate-700 dark:text-slate-300">
-          <Link to='#about' className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+        <div className="hidden sm:flex items-center gap-8 md:text-lg text-sm text-slate-700 dark:text-slate-300">
+          <Link to='#about' className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors ">
             About
           </Link>
           <Link to='#projects' className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
@@ -28,16 +28,16 @@ export function Header() {
             className="text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors p-2"
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Sun className="size-5" /> : <Moon className='size-5' />}
+            {theme === 'dark' ? <Sun className="size-4 md:size-5" /> : <Moon className='size-4 md:size-5' />}
           </button>
           <Link to='https://github.com/vqsantini'>
-            <Github className="text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors size-5" />
+            <Github className="text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors size-4 md:size-5" />
           </Link>
           <Link to='https://www.linkedin.com/in/victor-santini-8964bb356/'>
-            <Linkedin className="text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors size-5" />
+            <Linkedin className="text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors size-4 md:size-5" />
           </Link>
           <Link to='/'>
-            <Mail className="text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors size-5" />
+            <Mail className="text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors size-4 md:size-5" />
           </Link>
         </div>
       </nav>
