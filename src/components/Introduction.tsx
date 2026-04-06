@@ -1,6 +1,6 @@
 export function Introduction() {
   return (
-    <section id="about" className="h-[calc(100vh-64px)] flex items-center justify-center px-6 pt-20 bg-white dark:bg-slate-900 transition-colors overflow-x-hidden">
+    <section id="about" className="scroll-mt-16 h-[calc(100vh-64px)] flex items-center justify-center px-6 pt-20 bg-white dark:bg-slate-900 transition-colors overflow-x-hidden">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-6">
           <div className="inline-block px-4 py-2 bg-emerald-50 dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 rounded-full text-sm font-medium mb-4 border border-emerald-200 dark:border-slate-700 transition-colors">
@@ -15,7 +15,7 @@ export function Introduction() {
           </span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto transition-colors">
+        <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto transition-colors">    
           Specializing in AI-powered applications, machine learning, and modern web development.
           Passionate about building innovative solutions that make a difference.
         </p>

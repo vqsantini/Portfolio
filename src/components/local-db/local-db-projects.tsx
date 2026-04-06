@@ -1,4 +1,5 @@
 export const localDbProjects = [
+  // Projetos Principais
   {
     id: 1,
     name: "Project 1",
@@ -20,6 +21,18 @@ export const localDbProjects = [
   {
     id: 3,
     name: "Project 3",
+    description: "Description of Project 3",
+    image: "image.png",
+    tags: ["React", "TypeScript", "Tailwind"],
+    githubUrl: "https://github.com/project3",
+    liveUrl: "https://project3.com"
+  },
+  
+  // Projetos que não aparecem na apresentação
+
+  {
+    id: 4,
+    name: "Project 4",
     description: "Description of Project 3",
     image: "image.png",
     tags: ["React", "TypeScript", "Tailwind"],

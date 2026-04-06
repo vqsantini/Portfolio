@@ -1,24 +1,45 @@
 import { Github, Linkedin, Mail, Moon, Sun } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "../contexts/ThemeContext";
+import { useState } from "react";
 
 export function Header() {
   const { theme, toggleTheme } = useTheme()
+  const [path, setPath] = useState('/')
+  const navigate = useNavigate()
+
+  function handlePath(path: string) {
+    setPath(path)
+    return (setPath(path))
+  }
+
+  function handleAboutClick(e: React.MouseEvent) {
+    e.preventDefault()
+    handlePath('/')
+    if (window.location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }, 150)
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
 
   return (
-    <div className="fixed w-screen bg-white/95 dark:bg-slate-900 border-b-[0.5px] border-slate-200 dark:border-slate-800">
-      <nav className="max-w-[85%] flex justify-between items-center mx-auto px-6 py-4">
+    <div className="fixed w-screen z-50 bg-white/95 dark:bg-slate-900 border-b-[0.5px] border-slate-200 dark:border-slate-800">
+      <nav className="max-w-[85%] flex justify-between items-center mx-auto px-6 pt-4 sm:pt-0">
         <Link to='#' className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent md:text-2xl">
           Portfolio
         </Link>
-        <div className="hidden sm:flex items-center gap-8 md:text-lg text-sm text-slate-700 dark:text-slate-300">
-          <Link to='#about' className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors ">
+        <div className="hidden sm:flex items-center gap-8 md:text-lg text-slate-700 dark:text-slate-300">
+          <Link to="/" onClick={handleAboutClick} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
             About
           </Link>
-          <Link to='#projects' className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+          <Link to='/projects' onClick={() => handlePath('projects')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
             Projects
           </Link>
-          <Link to='#contact' className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+          <Link to='/contact' onClick={() => handlePath('contact')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
             Contact
           </Link>
         </div>
@@ -41,6 +62,19 @@ export function Header() {
           </Link>
         </div>
       </nav>
+      <div className="flex justify-center items-center">
+        <div className="flex sm:hidden items-center gap-8 md:text-lg text-slate-700 dark:text-slate-300 border-t-[0.5px]">
+          <Link to="/" onClick={handleAboutClick} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            About
+          </Link>
+          <Link to='/projects' onClick={() => handlePath('projects')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            Projects
+          </Link>
+          <Link to='/contact' onClick={() => handlePath('contact')} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            Contact
+          </Link>
+        </div>
+      </div>
     </div>
   )
 }
