@@ -28,11 +28,11 @@ export function Header() {
 
   return (
     <div className="fixed w-screen z-50 bg-white/95 dark:bg-slate-900 border-b-[0.5px] border-slate-200 dark:border-slate-800">
-      <nav className="max-w-[85%] flex justify-between items-center mx-auto px-6 sm:py-4       ">
+      <nav className="max-w-7xl flex justify-between sm:grid sm:grid-cols-[1fr_2fr_1fr] items-center mx-auto px-4 sm:px-6 lg:px-12 py-3 sm:py-4">
         <Link to='#' className="text-lg font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent md:text-2xl">
           Portfolio
         </Link>
-        <div className="hidden sm:flex items-center gap-8 md:text-lg text-slate-700 dark:text-slate-300">
+        <div className="hidden sm:flex items-center justify-center gap-8 md:text-lg text-slate-700 dark:text-slate-300">
           <Link to="/" onClick={handleAboutClick} className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
             About
           </Link>
@@ -43,7 +43,7 @@ export function Header() {
             Contact
           </Link>
         </div>
-        <div className="flex gap-4 text-gray-700 justify-center items-center">
+        <div className="flex gap-4 text-gray-700 justify-end items-center">
           <button
             onClick={toggleTheme}
             className="text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors p-2"
